@@ -1,9 +1,9 @@
 # local-alignment
 
-Performs local sequence alignment between two arrays of arbitrary type using the Smith-Waterman algorithm.
+Performs local sequence alignment between two arrays of arbitrary type using the [Smith-Waterman algorithm](https://en.wikipedia.org/wiki/Smith%E2%80%93Waterman_algorithm).
 
 This algorithm is often utilized in bioinformatics to do alignment between two sequenced DNA segments. Local alignment signifies that
-the algorithm strives to find the largest subsequence in the two arrays that be aligned subject to a similarity function
+the algorithm strives to find the largest subsequence in the two arrays that can be aligned subject to a similarity function
 (versus a global alignment between the entirety of both arrays where large subsegments might vary greatly).
 
 ## Installation
