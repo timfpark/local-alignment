@@ -18,6 +18,13 @@ describe("localAlignment", () => {
         expect(alignments.length).toBe(2);
         expect(alignments[0]).not.toBeUndefined();
         expect(alignments[1]).not.toBeUndefined();
-    });
 
+        const alignmentA = alignments[0];
+        expect(alignmentA.score).toBe(4);
+        expect(alignmentA.entries).toEqual([8, 10]);
+
+        const alignmentB = alignments[0];
+        expect(alignmentB.score).toBe(4);
+        expect(alignmentB.entries).toEqual([8, 10]);
+    });
 });

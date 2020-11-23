@@ -20,6 +20,7 @@ interface IScoringCell {
 interface IAlignment {
     start: number | undefined;
     finish: number | undefined;
+    score: number | undefined;
     entries: any[];
 }
 
@@ -100,12 +101,14 @@ function backtraceScoringMatrix(A: any[], B: any[], largestCell: IScoringCell) {
     const alignmentA: IAlignment = {
         start: undefined,
         finish: undefined,
+        score: undefined,
         entries: []
     };
 
     const alignmentB: IAlignment = {
         start: undefined,
         finish: undefined,
+        score: undefined,
         entries: []
     };
 
@@ -118,12 +121,14 @@ function backtraceScoringMatrix(A: any[], B: any[], largestCell: IScoringCell) {
 
         if (!alignmentA.finish) {
             alignmentA.finish = currentCell.row - 1;
+            alignmentA.score = currentCell.score;
         }
 
         alignmentA.start = currentCell.row - 1;
 
         if (!alignmentB.finish) {
             alignmentB.finish = currentCell.column - 1;
+            alignmentB.score = currentCell.score;
         }
 
         alignmentB.start = currentCell.column - 1;
