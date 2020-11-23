@@ -15,8 +15,9 @@ describe("localAlignment", () => {
 
         const alignments = localAlignment(A, B, simpleSim);
 
-        expect(alignments.A).not.toBeUndefined();
-        expect(alignments.B).not.toBeUndefined();
+        expect(alignments.length).toBe(2);
+        expect(alignments[0]).not.toBeUndefined();
+        expect(alignments[1]).not.toBeUndefined();
     });
 
 });

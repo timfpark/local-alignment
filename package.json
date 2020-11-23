@@ -1,6 +1,6 @@
 {
     "name": "local-alignment",
-    "version": "1.0.0",
+    "version": "1.0.2",
     "description": "Performs local sequence alignment of two strings using the Smith-Waterman algorithm",
     "main": "./dist/index.js",
     "types": "./dist/index.d.ts",

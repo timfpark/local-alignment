@@ -94,7 +94,7 @@ function buildScoringMatrix(A: any[], B: any[], simularity: SimularityFunction) 
     return { scoringMatrix, largestCell };
 }
 
-function backtraceScoringMatrix(A: any[], B: any[], largestCell: IScoringCell, scoringMatrix: IScoringCell[][]) {
+function backtraceScoringMatrix(A: any[], B: any[], largestCell: IScoringCell) {
     // backtrace path
     let currentCell: IScoringCell | undefined = largestCell;
     const alignmentA: IAlignment = {
@@ -143,12 +143,12 @@ function backtraceScoringMatrix(A: any[], B: any[], largestCell: IScoringCell, s
         currentCell = nextCell;
     }
 
-    return { A: alignmentA, B: alignmentB };
+    return [ alignmentA, alignmentB ];
 
 }
 
 export default function localAlignment(A: any[], B: any[], simularity: SimularityFunction) {
     const { scoringMatrix, largestCell } = buildScoringMatrix(A, B, simularity);
 
-    return backtraceScoringMatrix(A, B, largestCell, scoringMatrix);
+    return backtraceScoringMatrix(A, B, largestCell);
 }
